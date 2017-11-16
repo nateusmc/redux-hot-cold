@@ -26,14 +26,14 @@ describe('reducer', () => {
         state = reducer(state, makeGuess(1))
             expect(state.guesses).toEqual([1])
     })
-    it('Should get Jesse to quit talking', () => {
+    it('Should toggle Info Modal to true', () => {
         let state = {
             guesses: [],
             feedback: 'Make your guess!!',
             correctAnswer: 50,
-            showInfoModal: true
+            showInfoModal: false
         }
         state = reducer(state, toggleInfoModal())
-            expect(state.showInfoModal).toEqual()
+            expect(state.showInfoModal).toEqual(true)
     })
 })
